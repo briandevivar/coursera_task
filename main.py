@@ -41,7 +41,6 @@ def transform(data, exchange_rate):
 def load(data):
     csv_file = os.path.join(os.path.dirname(__file__), 'data', 'bank_market_cap_gbp.csv')
     data.to_csv(csv_file, index=False, encoding='utf-8')
-    pass
 
 
 def main():
@@ -56,14 +55,14 @@ def main():
 
     bank_df = extract_from_json()
 
-    print(bank_df.head(6))
+    print(bank_df.head(5))
 
     log(message='Extract Phase Ended')
 
     log(message='Transform Phase Started')
     transformed_data = transform(bank_df, exchange_rate_to_gbp)
 
-    print(transformed_data.head(6))
+    print(transformed_data.head(5))
 
     log(message='Transform Phase Ended')
 
